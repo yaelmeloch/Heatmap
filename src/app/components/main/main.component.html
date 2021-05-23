@@ -28,7 +28,7 @@
 
   <div class="settings-item">
     <div class="label">No. of Heats:</div>
-    <input type="number" [min]="MIN_HEATS" [max]="MAX_HEATS" name="heats" [value]="numOfHeats" (change)="numOfHeatsChanged($event)">
+    <input type="number" [min]="MIN_HEATS" [max]="MAX_HEATS" name="heats" [value]="numOfHeats" (input)="numOfHeatsChanged($event.target.value)">
   </div>
   <div class="error">{{numOfHeatsError}}</div>
 

@@ -1,0 +1,7 @@
+<div
+  class="dot"
+  [class.empty]="count === 0"
+  [ngStyle]="count === 0 ? {} : {'background-color': isActive ? hslCode : 'grey'}"
+  [title]="count"
+  (click)="dotClicked()">
+</div>

@@ -1,0 +1,78 @@
+:host {
+  --cell-width: 40px;
+  --cell-height: 30px;
+
+  .graph-container {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    width: fit-content;
+    height: fit-content;
+  }
+
+  .grid-wrapper {
+    width: calc(24*var(--cell-width));
+    height: calc(7*var(--cell-height));
+
+    .day-grid {
+      display: grid;
+      grid-auto-flow: column;
+      height: var(--cell-height);
+      //border-bottom: 1px solid black;
+      box-sizing: border-box;
+
+      .hour-item {
+        width: var(--cell-width);
+        height: var(--cell-height);
+        //border-left: 1px solid black;
+        box-sizing: border-box;
+        display: grid;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+  }
+
+  .days-line {
+    display: grid;
+    align-items: center;
+    margin-right: 10px;
+    text-align: end;
+
+    .day {
+      height: var(--cell-height);
+    }
+  }
+
+  .hours-line {
+    display: grid;
+    grid-auto-flow: column;
+    grid-column: 2/2;
+    text-align: center;
+    margin-top: 10px;
+
+    .hour {
+      width: var(--cell-width);
+    }
+  }
+
+  .heat-color-map {
+    align-self: center;
+    height: 235px;
+    overflow-y: auto;
+    width: fit-content;
+    padding-right: 30px;
+
+    .item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 5px;
+
+      .heat-dot {
+        margin-left: 5px;
+        height: 10px;
+        width: 10px;
+        border-radius: 10px;
+      }
+    }
+  }
+}

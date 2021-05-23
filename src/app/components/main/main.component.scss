@@ -1,0 +1,38 @@
+:host{
+  font-family: Arial, serif;
+  font-size: 12px;
+
+  input[type="radio"] {
+    margin: 0;
+  }
+
+  .settings-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+
+    .label {
+      margin-right: 10px;
+    }
+
+    .options-wrapper {
+      display: grid;
+      align-items: center;
+      grid-auto-flow: column;
+      column-gap: 10px;
+
+      .option {
+        display: grid;
+        align-items: center;
+        grid-auto-flow: column;
+        column-gap: 3px;
+      }
+    }
+  }
+
+  .error {
+    color: red;
+    font-size: 10px;
+    height: 15px;
+  }
+}

@@ -1,0 +1,32 @@
+<div style="display: grid; grid-auto-flow: column;">
+  <div class="graph-container">
+    <div class="days-line">
+      <div *ngFor="let day of daysArray">{{day}}</div>
+    </div>
+
+    <div class="grid-wrapper">
+      <div class="day-grid" *ngFor="let day of matToDisplay; let dayIndex = index">
+        <div class="hour-item" *ngFor="let hour of day; let hourIndex = index">
+          <app-activity-dot
+            [isActive]="hour.active"
+            [count]="hour.count"
+            [maxNumOfActivities]="maxNumOfActivities"
+            [numOfHeats]="numOfHeats"
+            (clicked)="hourClicked(dayIndex, hourIndex)">
+          </app-activity-dot>
+        </div>
+      </div>
+    </div>
+
+    <div class="hours-line" [ngStyle]="{'grid-template-columns': 'repeat(' + numOfHours + ', 1fr)'}">
+      <div *ngFor="let hour of hoursArray" class="hour">{{hour | numberToHour}}</div>
+    </div>
+  </div>
+
+  <div class="heat-color-map">
+    <div class="item" *ngFor="let item of heatColorsMap">
+      <div>Heat {{item.heat}}:</div>
+      <div class="heat-dot" [ngStyle]="{'background-color': item.color}"></div>
+    </div>
+  </div>
+</div>

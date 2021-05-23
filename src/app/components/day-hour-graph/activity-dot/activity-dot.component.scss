@@ -1,0 +1,16 @@
+:host {
+  .dot {
+    height: 10px;
+    width: 10px;
+    border-radius: 15px;
+
+    &:hover:not(.empty) {
+      cursor: pointer;
+    }
+
+    &.empty {
+      background-color: lightgrey;
+      pointer-events: none;
+    }
+  }
+}
